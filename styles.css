@@ -1,0 +1,197 @@
+:root {
+    --base-bg: hsl(240, 4%, 19%);
+    --btn-bg: hsl(197, 55%, 32%);
+    --btn-bg-hover: hsl(197, 55%, 27%);
+    --btn-bg-active: hsl(197, 55%, 22%);
+}
+body,html {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    font-family: "Gabarito", sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--base-bg);
+    min-height: 22rem;
+    min-width: 18rem;
+    border-radius: 15px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 1);
+    position: relative;
+    padding: 25px 0px;
+}
+.header {
+    border-bottom: 2px solid rgb(66, 66, 66);
+    width: 230px;
+    margin-bottom: 12px;
+}
+.header-text {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-shadow: 0 3px 0px rgba(0, 0, 0, 0.65);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 12px;
+}
+.base-text {
+    color: hsl(0, 0%, 80%);
+    font-weight: 600;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.65);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.base-btn {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    padding: 0.75rem 0.5rem;
+    width: 180px;
+    border-radius: 16px;
+    border: none;
+    transition: 0.25s;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: hsl(0, 0%, 82%);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+    background-color: var(--btn-bg)
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(0, 0%, 13%);
+    min-height: 22rem;
+    min-width: 18rem;
+    position: absolute;
+    z-index: -1;
+    border: 2px solid rgb(77, 77, 77);
+    font-size: 0.8rem;
+    opacity: 0;
+    max-height: 380px;
+    overflow-y: auto;
+    scrollbar-color: rgb(77, 77, 77) hsl(0, 0%, 13%);;
+    scrollbar-width: thin;
+    
+}
+.student-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.roster-table-row {
+    white-space: nowrap;
+}
+
+.roster-table-row td, .roster-table-row th {
+    white-space: nowrap;
+    padding: 6px 0px;
+    border-left: 2px solid hsla(0, 0%, 100%, 0.05);;
+    border-right: 2px solid hsla(0, 0%, 100%, 0.05);;
+}
+
+.roster-table-row th {
+    background-color: hsla(0, 0%, 100%, 0.05);
+    padding: 6px 6px;
+    white-space: wrap;
+}
+.roster-table-row:nth-child(even){background-color: hsla(0, 0%, 100%, 0.05);}
+
+#roster-header {
+    margin-top: 20px;
+    text-align: center;
+}
+#roster-container {
+    border-left: none;
+    border-radius: 0px 10px 10px 0px;
+}
+#attendance-container {
+    border-right: none;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.base-btn:hover {background-color: var(--btn-bg-hover)}
+.base-btn:active {background-color: var(--btn-bg-active)}
+
+@keyframes slide-left {
+    from {opacity: 0%; left: 0%;}
+    to {opacity: 100%; left: 100%;}
+}
+@keyframes slide-right {
+    from {opacity: 100%; left: 100%;}
+    to {opacity: 0%; left: 0%;}
+}
+
+@keyframes slide-left-attendance {
+    from {opacity: 0%; right: 0%;}
+    to {opacity: 100%; right: 100%;}
+}
+
+.slide-toggle-off {
+    animation: slide-right 1s;
+    left: 0%;
+    opacity: 0%;
+}
+
+.slide-toggle-on {
+    animation: slide-left 1s;
+    opacity: 100%;
+    left: 100%;
+}
+
+.slide-right-toggle-on {
+    animation: slide-left-attendance 1s;
+    opacity: 100%;
+    right: 100%;
+}
+
+.id-input {
+    border: none;
+    border-radius: 15px;
+    width: 125px;
+    transition: 0.35s;
+    padding: 10px 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .id-input:hover  {
+    box-shadow: 0px 0px 7px white;
+  }
+  .id-input:focus {
+    outline: none;
+    box-shadow: 0px 0px 7px white;
+  }
+
+  .submit-id-btn {
+    padding: 0.5rem 0.9rem;
+    margin-left: 10px;
+    font-size: 0.95rem;
+    border-radius: 15px;
+  }
+
+  .id-search-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 12px;
+  }
+  #export-attendance-btn {
+    text-align: center;
+    text-decoration: none;
+    width: 164px;
+    font-size: 1.14rem;
+  }

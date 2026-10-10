@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <title>Class Attendance Website</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p class="header-text">Class Attendance Taker</p>
+        </div>
+        <div class="button-container">
+            <button id="import-roster-btn" class="base-btn">Import Roster</button> 
+            <button id="view-roster-btn" class="base-btn">View Roster</button> 
+            <button id="take-attendance-btn" class="base-btn">Take Attendance</button>
+            <a href="#test" id="export-attendance-btn" class="base-btn">Export Attendance</a>
+        </div>
+        <div id="roster-container" class="table-container">
+            <div class="header" id="roster-header">
+                <p class="header-text">Current Roster</p>
+                <div class="id-search-container">
+                    <input type="number" name="id-input" placeholder="Put your ID here" class="id-input" id="id-input-id-search">
+                    <button class="base-btn submit-id-btn" id="enter-btn-id-search">Enter</button>
+                </div>
+            </div>
+            <table id="student-table" class="student-table">
+                <thead>
+                    <tr class="base-text roster-table-row">
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Student Grade</th>
+                    <th>Student Attended</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div id="attendance-container" class="table-container">
+            <div class="header" id="roster-header">
+                <p class="header-text" id="attendance-header-text">Attendance Output</p>
+            </div>
+            <table id="student-table-attendance" class="student-table">
+                <thead>
+                    <tr class="base-text roster-table-row">
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Student Grade</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
