@@ -43,11 +43,26 @@ class Period {
     #pushAttendance = [];
     #generatedTable = false;
     #tBodyGen;
+    #imported = false;
+    #takenAttendance = false;
     
  
     add(classmate) {
        this.#roster.push(classmate)
     }
+
+    getImportedRoster() {
+        return this.#imported;
+    }
+    setImportedRoster(importedRoster) {
+        this.#imported = importedRoster;
+    }
+    // getTakenAttendance() {
+    //     return this.#takenAttendance;
+    // }
+    // setTakenAttendance(takenAttendance) {
+    //     this.#takenAttendance = takenAttendance;
+    // }
 
     getRoster() {
         return this.#roster;
@@ -84,7 +99,6 @@ class Period {
             console.log(student.toString());
         }
     }
-    //sigma
 
     attachTableDataToTableRow(tr, value) {
         const tableData = document.createElement("td");
@@ -184,6 +198,7 @@ const idInputIDSearch = document.getElementById("id-input-id-search");
 const exportAttendanceBtn = document.getElementById("export-attendance-btn");
 
 let classRoster = new Period();
+//example students, not real
 let rosterToImport = [new Student("Reid","Christopher",10,9,"M"), 
     new Student("Chapman","Tim",11,10,"M"),
     new Student("Clarkson","Charles",12,11,"M"),
@@ -218,8 +233,10 @@ viewRosterBtn.addEventListener("click", (event) => {
 })
 
 importRosterBtn.addEventListener("click", (event) => {
-    classRoster.importRoster(rosterToImport);
+    if(classRoster.getImportedRoster() != true) {
+        classRoster.importRoster(rosterToImport);} else {return}
     classRoster.generateStudentTable(studentTable, classRoster.getRoster(), true);
+    classRoster.setImportedRoster(true)
 })
 
 takeAttendanceBtn.addEventListener("click", (event) => {
